@@ -46,14 +46,18 @@ public class Ticket {
         }
         
         System.out.println("--------------------------------------------------------------------");
+        
         double precioConIva4 = cinta.totalPrecioIva4() + (cinta.totalPrecioIva4() * 0.04);
         double precioConIva10 = cinta.totalPrecioIva10() + (cinta.totalPrecioIva10() * 0.1);
         double precioConIva21 = cinta.totalPrecioIva21() + (cinta.totalPrecioIva21() * 0.21);
+        
         System.out.println("Nº prod. iva 4%: " + cinta.cantidadProductosIva4() + "  Precio sin IVA: " + cinta.totalPrecioIva4() + "   Precio con IVA: " + precioConIva4);
         System.out.println("Nº prod. iva 10%: " + cinta.cantidadProductosIva10() + "  Precio sin IVA: " + cinta.totalPrecioIva10() + "   Precio con IVA: " + precioConIva10);
         System.out.println("Nº prod. iva 21%: " + cinta.cantidadProductosIva21() + "  Precio sin IVA: " + cinta.totalPrecioIva21() + "   Precio con IVA: " + precioConIva21);
         System.out.println("--------------------------------------------------------------------");
+        
         double precioTotal = precioConIva4 + precioConIva10 + precioConIva21;
+        
         System.out.println("Total a pagar: " + precioTotal + " -- Gracias por su visita");
         System.out.println("--------------------------------------------------------------------");
     }

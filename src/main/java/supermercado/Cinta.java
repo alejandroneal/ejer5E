@@ -81,8 +81,12 @@ public class Cinta {
                 listaAux.add(auxProducto);
             }
         }
+        int cantidadProductos  = 0;
+        for (Producto producto : listaAux) {
+            cantidadProductos += producto.cantidad();
+        }
         
-        return listaAux.size();
+        return cantidadProductos;
     }
     
     public int cantidadProductosIva10(){
@@ -96,8 +100,12 @@ public class Cinta {
                 listaAux.add(auxProducto);
             }
         }
+        int cantidadProductos  = 0;
+        for (Producto producto : listaAux) {
+            cantidadProductos += producto.cantidad();
+        }
         
-        return listaAux.size();
+        return cantidadProductos;
     }
     
     public int cantidadProductosIva21(){
@@ -111,56 +119,75 @@ public class Cinta {
                 listaAux.add(auxProducto);
             }
         }
+        int cantidadProductos  = 0;
+        for (Producto producto : listaAux) {
+            cantidadProductos += producto.cantidad();
+        }
         
-        return listaAux.size();
+        return cantidadProductos;
     }
     
     //Devolver suma de todos los precios que tengan el mismo iva
     public double totalPrecioIva4(){
         
-        ArrayList<Integer> listaPrecios = new ArrayList<>();
+        ArrayList<Double> listaPrecios = new ArrayList<>();
+        ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 4) {
-                listaPrecios.add(i);
+                listaPrecios.add(auxProducto.precio());
+                cantidadProductos.add(auxProducto.cantidad());
             }
         }
         
-        double suma = listaPrecios.stream().mapToInt(Integer :: valueOf).sum();
-        return suma;
+        double precioProductos = 0;
+        for (int i = 0; i < listaPrecios.size(); i++) {
+            precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
+        }
+        return precioProductos;
     }
     
     public double totalPrecioIva10(){
         
         ArrayList<Integer> listaPrecios = new ArrayList<>();
+        ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 10) {
                 listaPrecios.add(i);
+                cantidadProductos.add(auxProducto.cantidad());
             }
         }
         
-        double suma = listaPrecios.stream().mapToInt(Integer :: valueOf).sum();
-        return suma;
+        double precioProductos = 0;
+        for (int i = 0; i < listaPrecios.size(); i++) {
+            precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
+        }
+        return precioProductos;
     }
     
     public double totalPrecioIva21(){
         
         ArrayList<Integer> listaPrecios = new ArrayList<>();
+        ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 21) {
                 listaPrecios.add(i);
+                cantidadProductos.add(auxProducto.cantidad());
             }
         }
         
-        double suma = listaPrecios.stream().mapToInt(Integer :: valueOf).sum();
-        return suma;
+        double precioProductos = 0;
+        for (int i = 0; i < listaPrecios.size(); i++) {
+            precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
+        }
+        return precioProductos;
     }
 }

@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         
         Producto champu = new Producto("champú", 3.5, 1, 21);
-        Producto leche = new Producto("leche", 0.9, 2, 10);
+        Producto leche = new Producto("leche", 1, 2, 10);
         Producto natilla = new Producto("natilla", 3, 3, 4);
         Producto servilletas = new Producto("servilletas", 0.75, 2, 21);
         
