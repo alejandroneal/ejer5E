@@ -7,6 +7,7 @@ package supermercado;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -25,7 +26,9 @@ public class Cinta {
     
     @Override
     public String toString() {
-        Collections.sort(cinta, (p1, p2) -> p1.iva() - p2.iva());
+//        Collections.sort(cinta, (p1, p2) -> p1.iva() - p2.iva());
+        
+        this.cinta.sort(Comparator.comparing(Producto :: iva).thenComparing(Producto :: nombre));
         
         String tmp = "";
         for (Producto producto : this.cinta) {

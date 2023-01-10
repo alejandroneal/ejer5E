@@ -25,6 +25,8 @@ public class Main {
         cinta.anadirProducto(new Producto("natilla", 3, 3, 4));
         cinta.anadirProducto(new Producto("champú", 3.5, 1, 21));
         cinta.anadirProducto(new Producto("servilletas", 0.75, 2, 21));
+        cinta.anadirProducto(new Producto("patatas", 1.5, 2, 4));
+        cinta.anadirProducto(new Producto("aguacate", 2.75, 3, 10));
         
         Caja caja = new Caja(1, cinta);
         
