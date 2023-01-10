@@ -4,6 +4,8 @@
  */
 package supermercado;
 
+import java.util.Collections;
+
 /**
  * 1ºCrear productos
  * 2ºCrear una caja con id a elección
@@ -13,16 +15,16 @@ package supermercado;
 public class Main {
     public static void main(String[] args) {
         
-        Producto champu = new Producto("champú", 3.5, 1, 21);
-        Producto leche = new Producto("leche", 1, 2, 10);
-        Producto natilla = new Producto("natilla", 3, 3, 4);
-        Producto servilletas = new Producto("servilletas", 0.75, 2, 21);
+//        Producto champu = new Producto("champú", 3.5, 1, 21);
+//        Producto leche = new Producto("leche", 1, 2, 10);
+//        Producto natilla = new Producto("natilla", 3, 3, 4);
+//        Producto servilletas = new Producto("servilletas", 0.75, 2, 21);
         
         Cinta cinta = new Cinta();
-        cinta.anadirProducto(leche);
-        cinta.anadirProducto(natilla);
-        cinta.anadirProducto(champu);
-        cinta.anadirProducto(servilletas);
+        cinta.anadirProducto(new Producto("leche", 1, 2, 10));
+        cinta.anadirProducto(new Producto("natilla", 3, 3, 4));
+        cinta.anadirProducto(new Producto("champú", 3.5, 1, 21));
+        cinta.anadirProducto(new Producto("servilletas", 0.75, 2, 21));
         
         Caja caja = new Caja(1, cinta);
         

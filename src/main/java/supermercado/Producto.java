@@ -8,19 +8,6 @@ package supermercado;
  *
  * @author Alejandro
  */
-public record Producto(String nombre,double precio, int cantidad, int iva) {
-    
-    public int compareTo( Producto o ) {
-        int byIva = Integer.compare(this.iva, o.iva);
-        if ( byIva != 0 ) {
-            return byIva;
-        }
-        if ( nombre == null ) {
-            return o.nombre == null ? 0 : 1;
-        }
-        if ( o.nombre == null ) {
-            return 1;
-        }
-        return nombre.compareToIgnoreCase(o.nombre);
-    }
+public record Producto(String nombre,double precio, int cantidad, int iva) { 
+   
 }
