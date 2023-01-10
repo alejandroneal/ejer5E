@@ -152,19 +152,22 @@ public class Cinta {
         for (int i = 0; i < listaPrecios.size(); i++) {
             precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
         }
+        
+        precioProductos = Math.ceil(precioProductos*100)/100;
+        
         return precioProductos;
     }
     
     public double totalPrecioIva10(){
         
-        ArrayList<Integer> listaPrecios = new ArrayList<>();
+        ArrayList<Double> listaPrecios = new ArrayList<>();
         ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 10) {
-                listaPrecios.add(i);
+                listaPrecios.add(auxProducto.precio());
                 cantidadProductos.add(auxProducto.cantidad());
             }
         }
@@ -173,19 +176,22 @@ public class Cinta {
         for (int i = 0; i < listaPrecios.size(); i++) {
             precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
         }
+        
+        precioProductos = Math.ceil(precioProductos*100)/100;
+        
         return precioProductos;
     }
     
     public double totalPrecioIva21(){
         
-        ArrayList<Integer> listaPrecios = new ArrayList<>();
+        ArrayList<Double> listaPrecios = new ArrayList<>();
         ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 21) {
-                listaPrecios.add(i);
+                listaPrecios.add(auxProducto.precio());
                 cantidadProductos.add(auxProducto.cantidad());
             }
         }
@@ -194,6 +200,9 @@ public class Cinta {
         for (int i = 0; i < listaPrecios.size(); i++) {
             precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
         }
+        
+        precioProductos = Math.ceil(precioProductos*100)/100;
+        
         return precioProductos;
     }
 }
