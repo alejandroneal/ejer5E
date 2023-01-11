@@ -5,6 +5,7 @@
 package supermercado;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Cinta {
     
     private List<Producto> cinta;
     private LocalDate fecha = LocalDate.now();
+    private LocalTime hora = LocalTime.now();
 
     public Cinta() {
         this.cinta = new ArrayList<>();
@@ -67,6 +69,10 @@ public class Cinta {
 
     public LocalDate getFecha() {
         return fecha;
+    }
+
+    public LocalTime getHora() {
+        return hora;
     }
     
     public Producto mostrarProductos(int posicion){

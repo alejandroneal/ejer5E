@@ -33,7 +33,7 @@ public class Ticket {
     public void mostrarTicket(){
         
         System.out.println("                          Supermercado Paqui");
-        System.out.println("Fecha: " +  cinta.getFecha()); //fecha en la que se crea el ticket
+        System.out.println("Fecha: " +  cinta.getFecha() + "    Hora: " + cinta.getHora()); //fecha en la que se crea el ticket
         System.out.println("--------------------------------------------------------------------");
         System.out.println("Producto        Precio      Cantidad        IVA     Precio sin IVA");
         System.out.println("--------------------------------------------------------------------");
