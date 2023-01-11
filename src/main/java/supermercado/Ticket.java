@@ -33,11 +33,12 @@ public class Ticket {
     public void mostrarTicket(){
         
         System.out.println("                                    Supermercado Paqui");
-        System.out.println("Fecha: " +  cinta.getFecha());
+        System.out.println("Fecha: " +  cinta.getFecha()); //fecha en la que se crea el ticket
         System.out.println("--------------------------------------------------------------------");
         System.out.println("Producto        Precio      Cantidad        IVA     Precio sin IVA");
         System.out.println("--------------------------------------------------------------------");
         
+        //Bucle para ir mostrando los productos uno por uno 
         for (int i = 0; i < cinta.getNumeroProductos(); i++) {
             Producto auxProducto = cinta.mostrarProductos(i);
             double precioSinIva = auxProducto.precio() * auxProducto.cantidad();
@@ -47,20 +48,16 @@ public class Ticket {
         
         System.out.println("--------------------------------------------------------------------");
         
-        double precioConIva4 = cinta.totalPrecioIva4() + (cinta.totalPrecioIva4() * 0.04);
-        precioConIva4 = Math.ceil(precioConIva4*100)/100;
-        double precioConIva10 = cinta.totalPrecioIva10() + (cinta.totalPrecioIva10() * 0.1);
-        precioConIva10 = Math.ceil(precioConIva10*100)/100;
-        double precioConIva21 = cinta.totalPrecioIva21() + (cinta.totalPrecioIva21() * 0.21);
-        precioConIva21 = Math.ceil(precioConIva21*100)/100;
+        double precioConIva4 = cinta.precioConIva4(cinta.totalPrecioSinIva4());
+        double precioConIva10 = cinta.precioConIva10(cinta.totalPrecioSinIva10());
+        double precioConIva21 = cinta.precioConIva21(cinta.totalPrecioSinIva21());
         
-        System.out.println("Nº prod. iva 4%: " + cinta.cantidadProductosIva4() + "  Precio sin IVA: " + cinta.totalPrecioIva4() + "   Precio con IVA: " + precioConIva4);
-        System.out.println("Nº prod. iva 10%: " + cinta.cantidadProductosIva10() + "  Precio sin IVA: " + cinta.totalPrecioIva10() + "   Precio con IVA: " + precioConIva10);
-        System.out.println("Nº prod. iva 21%: " + cinta.cantidadProductosIva21() + "  Precio sin IVA: " + cinta.totalPrecioIva21() + "   Precio con IVA: " + precioConIva21);
+        System.out.println("Nº prod. iva 4%: " + cinta.cantidadProductosIva4() + "  Precio sin IVA: " + cinta.totalPrecioSinIva4() + "   Precio con IVA: " + precioConIva4);
+        System.out.println("Nº prod. iva 10%: " + cinta.cantidadProductosIva10() + "  Precio sin IVA: " + cinta.totalPrecioSinIva10() + "   Precio con IVA: " + precioConIva10);
+        System.out.println("Nº prod. iva 21%: " + cinta.cantidadProductosIva21() + "  Precio sin IVA: " + cinta.totalPrecioSinIva21() + "   Precio con IVA: " + precioConIva21);
         System.out.println("--------------------------------------------------------------------");
         
-        double precioTotal = precioConIva4 + precioConIva10 + precioConIva21;
-        precioTotal = Math.ceil(precioTotal*100)/100;
+        double precioTotal = cinta.precioTotal(precioConIva4, precioConIva10, precioConIva21);
         
         System.out.println("Total a pagar: " + precioTotal + " -- Gracias por su visita");
         System.out.println("--------------------------------------------------------------------");

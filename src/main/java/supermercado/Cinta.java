@@ -26,8 +26,7 @@ public class Cinta {
     
     @Override
     public String toString() {
-//        Collections.sort(cinta, (p1, p2) -> p1.iva() - p2.iva());
-        
+        //Ordenar los elementos de la lista por iva y después por nombre con la clase Comparator
         this.cinta.sort(Comparator.comparing(Producto :: iva).thenComparing(Producto :: nombre));
         
         String tmp = "";
@@ -75,11 +74,13 @@ public class Cinta {
         return this.cinta.get(posicion);
     }
     
+//----------------------------------------------------------------------------------------------------------------------------------------------
     //Devolver cantidad de productos con los diferentes ivas
     public int cantidadProductosIva4(){
         
         ArrayList<Producto> listaAux = new ArrayList<>();
         
+        //Bucle para guardar en la lista anteriormente creada los productos que tengan un iva del 4%
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
@@ -87,7 +88,10 @@ public class Cinta {
                 listaAux.add(auxProducto);
             }
         }
+        
         int cantidadProductos  = 0;
+        //Bucle que suma los valores de la lista anteriormente rellenada para saber la cantidad total de los
+        //productos con un iva del 4%
         for (Producto producto : listaAux) {
             cantidadProductos += producto.cantidad();
         }
@@ -99,6 +103,7 @@ public class Cinta {
         
         ArrayList<Producto> listaAux = new ArrayList<>();
         
+        //Bucle para guardar en la lista anteriormente creada los productos que tengan un iva del 4%
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
@@ -106,7 +111,10 @@ public class Cinta {
                 listaAux.add(auxProducto);
             }
         }
+        
         int cantidadProductos  = 0;
+        //Bucle que suma los valores de la lista anteriormente rellenada para saber la cantidad total de los
+        //productos con un iva del 4%
         for (Producto producto : listaAux) {
             cantidadProductos += producto.cantidad();
         }
@@ -118,6 +126,7 @@ public class Cinta {
         
         ArrayList<Producto> listaAux = new ArrayList<>();
         
+        //Bucle para guardar en la lista anteriormente creada los productos que tengan un iva del 4%
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
@@ -126,6 +135,8 @@ public class Cinta {
             }
         }
         int cantidadProductos  = 0;
+        //Bucle que suma los valores de la lista anteriormente rellenada para saber la cantidad total de los
+        //productos con un iva del 4%
         for (Producto producto : listaAux) {
             cantidadProductos += producto.cantidad();
         }
@@ -133,22 +144,25 @@ public class Cinta {
         return cantidadProductos;
     }
     
-    //Devolver suma de todos los precios que tengan el mismo iva
-    public double totalPrecioIva4(){
+//----------------------------------------------------------------------------------------------------------------------------------------------
+    //Devolver suma de todos los precios que tengan el mismo iva pero sin implementar el iva
+    public double totalPrecioSinIva4(){
         
         ArrayList<Double> listaPrecios = new ArrayList<>();
         ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
+        //Bucle para guardar en las listas los productos con un iva del 4%
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 4) {
-                listaPrecios.add(auxProducto.precio());
-                cantidadProductos.add(auxProducto.cantidad());
+                listaPrecios.add(auxProducto.precio()); //lista que guarda el precio de cada producto de la cinta
+                cantidadProductos.add(auxProducto.cantidad()); //lista que guarda la cantidad de cada producto
             }
         }
         
         double precioProductos = 0;
+        //Bucle para multiplicar el precio de un producto por su cantidad y sumarlo con los otros productos
         for (int i = 0; i < listaPrecios.size(); i++) {
             precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
         }
@@ -158,21 +172,23 @@ public class Cinta {
         return precioProductos;
     }
     
-    public double totalPrecioIva10(){
+    public double totalPrecioSinIva10(){
         
         ArrayList<Double> listaPrecios = new ArrayList<>();
         ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
+        //Bucle para guardar en las listas los productos con un iva del 10%
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 10) {
-                listaPrecios.add(auxProducto.precio());
-                cantidadProductos.add(auxProducto.cantidad());
+                listaPrecios.add(auxProducto.precio()); //lista que guarda el precio de cada producto de la cinta
+                cantidadProductos.add(auxProducto.cantidad()); //lista que guarda la cantidad de cada producto
             }
         }
         
         double precioProductos = 0;
+        //Bucle para multiplicar el precio de un producto por su cantidad y sumarlo con los otros productos
         for (int i = 0; i < listaPrecios.size(); i++) {
             precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
         }
@@ -182,21 +198,23 @@ public class Cinta {
         return precioProductos;
     }
     
-    public double totalPrecioIva21(){
+    public double totalPrecioSinIva21(){
         
         ArrayList<Double> listaPrecios = new ArrayList<>();
         ArrayList<Integer> cantidadProductos = new ArrayList<>();
         
+        //Bucle para guardar en las listas los productos con un iva del 21%
         for (int i = 0; i < getNumeroProductos(); i++) {
             Producto auxProducto = mostrarProductos(i);
             
             if (auxProducto.iva() == 21) {
-                listaPrecios.add(auxProducto.precio());
-                cantidadProductos.add(auxProducto.cantidad());
+                listaPrecios.add(auxProducto.precio()); //lista que guarda el precio de cada producto de la cinta
+                cantidadProductos.add(auxProducto.cantidad()); //lista que guarda la cantidad de cada producto
             }
         }
         
         double precioProductos = 0;
+        //Bucle para multiplicar el precio de un producto por su cantidad y sumarlo con los otros productos
         for (int i = 0; i < listaPrecios.size(); i++) {
             precioProductos += listaPrecios.get(i) * cantidadProductos.get(i);
         }
@@ -204,5 +222,45 @@ public class Cinta {
         precioProductos = Math.ceil(precioProductos*100)/100;
         
         return precioProductos;
+    }
+    
+//----------------------------------------------------------------------------------------------------------------------------------------------
+    //Métodos que devuelven un double con el precio con iva total de los productos con el mismo iva
+    public double precioConIva4(double precioSinIva4){
+        
+        double precio = precioSinIva4 + (precioSinIva4 + 0.04);
+        
+        precio = Math.ceil(precio*100)/100;
+        
+        return precio;
+    }
+    
+    public double precioConIva10(double precioSinIva10){
+        
+        double precio = precioSinIva10 + (precioSinIva10 + 0.1);
+        
+        precio = Math.ceil(precio*100)/100;
+        
+        return precio;
+    }
+    
+    public double precioConIva21(double precioSinIva21){
+        
+        double precio = precioSinIva21 + (precioSinIva21 + 0.21);
+        
+        precio = Math.ceil(precio*100)/100;
+        
+        return precio;
+    }
+    
+//----------------------------------------------------------------------------------------------------------------------------------------------
+    //Método que devuelve double con el precio total, que es la suma del precio de todos los productos 
+    //con iva
+    public double precioTotal(double precioIva4, double precioIva10, double precioIva21){
+        
+        double precioTotal = precioIva4 + precioIva10 + precioIva21;
+        precioTotal = Math.ceil(precioTotal*100)/100;
+        
+        return precioTotal;
     }
 }
