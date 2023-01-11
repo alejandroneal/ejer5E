@@ -16,6 +16,10 @@ public class Main {
     public static void main(String[] args) {
         
         Cinta cinta = new Cinta();
+        
+        System.out.println("¿La lista está vacía?: " + cinta.comprobarSiEstaVacia());
+        System.out.println("");
+        
         cinta.anadirProducto(new Producto("leche", 1, 2, 10));
         cinta.anadirProducto(new Producto("natilla", 3, 3, 4));
         cinta.anadirProducto(new Producto("champú", 3.5, 1, 21));
