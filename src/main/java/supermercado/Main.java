@@ -4,8 +4,6 @@
  */
 package supermercado;
 
-import java.util.Collections;
-
 /**
  * 1ºCrear productos
  * 2ºCrear una caja con id a elección

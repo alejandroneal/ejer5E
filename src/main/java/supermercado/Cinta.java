@@ -4,10 +4,13 @@
  */
 package supermercado;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -71,8 +74,8 @@ public class Cinta {
         return fecha;
     }
 
-    public LocalTime getHora() {
-        return hora;
+    public String getHora() {
+        return new SimpleDateFormat("H:mm").format(new Date());
     }
     
     public Producto mostrarProductos(int posicion){
@@ -242,7 +245,7 @@ public class Cinta {
     //Métodos que devuelven un double con el precio con iva total de los productos con el mismo iva
     public double precioConIva4(double precioSinIva4){
         
-        double precio = precioSinIva4 + (precioSinIva4 + 0.04);
+        double precio = precioSinIva4 + (precioSinIva4 * 0.04);
         
         precio = Math.ceil(precio*100)/100;
         
@@ -251,7 +254,7 @@ public class Cinta {
     
     public double precioConIva10(double precioSinIva10){
         
-        double precio = precioSinIva10 + (precioSinIva10 + 0.1);
+        double precio = precioSinIva10 + (precioSinIva10 * 0.1);
         
         precio = Math.ceil(precio*100)/100;
         
@@ -260,7 +263,7 @@ public class Cinta {
     
     public double precioConIva21(double precioSinIva21){
         
-        double precio = precioSinIva21 + (precioSinIva21 + 0.21);
+        double precio = precioSinIva21 + (precioSinIva21 * 0.21);
         
         precio = Math.ceil(precio*100)/100;
         
