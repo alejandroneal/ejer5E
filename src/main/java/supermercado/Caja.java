@@ -48,6 +48,7 @@ public class Caja {
         return sb.toString();
     }
     
+    //Método que genera y devuelve un objeto tipo ticket
     public Ticket generarTicket(){
         
         Ticket ticket = new Ticket(this.cinta);
