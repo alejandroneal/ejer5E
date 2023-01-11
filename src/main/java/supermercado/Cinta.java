@@ -60,13 +60,11 @@ public class Cinta {
         return -1;
     }
     
-    public boolean borrarProducto(Producto producto) {
+    public void borrarProducto(Producto producto) {
         int pos = buscarProducto(producto);
         if (pos >= 0) {
             this.cinta.remove(pos);
-            return true;
         }
-        return false;
     }
 
     public LocalDate getFecha() {
