@@ -6,6 +6,7 @@ package supermercado;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -72,6 +73,15 @@ public class Cinta {
     
     public Producto mostrarProductos(int posicion){
         return this.cinta.get(posicion);
+    }
+    
+    //Método que devuelve un boolean que indica si está o no vacía la lista
+    public boolean comprobarSiEstaVacia(){
+        if (cinta == null || cinta.isEmpty()){ //si está vacía devuelve true
+            return true;
+        } else { //si está llena devuelve false
+            return false;
+        }
     }
     
 //----------------------------------------------------------------------------------------------------------------------------------------------

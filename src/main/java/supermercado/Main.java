@@ -22,14 +22,19 @@ public class Main {
         cinta.anadirProducto(new Producto("servilletas", 0.75, 2, 21));
         cinta.anadirProducto(new Producto("patatas", 1.5, 2, 4));
         cinta.anadirProducto(new Producto("aguacate", 2.75, 3, 10));
+        cinta.anadirProducto(new Producto("arroz", 0.99, 1, 4));
         
+        System.out.println("Añadir productos-------------------------------------------------------------");
         Caja caja = new Caja(1, cinta);
         
         System.out.println(cinta);
         
-//        System.out.println("Borrar un producto------------------------------------------------------------");
-//        cinta.borrarProducto(leche);
-//        System.out.println(cinta);
+        System.out.println("Borrar un produco------------------------------------------------------------");
+        cinta.borrarProducto(new Producto("arroz", 0.99, 1, 4));
+        System.out.println(cinta);
+        
+        System.out.println("¿La lista está vacía?: " + cinta.comprobarSiEstaVacia());
+        System.out.println("");
         
         System.out.println("Generar un ticket--------------------------------------------------------------");
         Ticket ticket = caja.generarTicket();
